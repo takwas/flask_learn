@@ -1,0 +1,15 @@
+<!--A Jinja2 HTML document for HOME PAGE; extends base document-->
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block navbar %}
+{{ super() }}
+{% endblock %}<!--end-block:NAV-->
+
+{% block content %}
+{{ super()}}
+<div class="container">
+	<p>Home, Sweet Home!</p>
+</div>
+{% endblock %}<!--end-block:CONTENT-->

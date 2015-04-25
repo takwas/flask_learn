@@ -1,0 +1,49 @@
+<!--A Jinja2 HTML document for USER-LOGIN PAGE; extends base document-->
+
+
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block navbar %}
+{{ super() }}
+{% endblock %}<!--end-block:NAV-->
+
+{% block content %}
+{{ super()}}
+<h2>Hello,</h2> <br/><h3>please login to continue</h3>
+
+<div class="page-content-wrapper">
+	<div class="container">
+		<div class="row" id="main-content">
+			<div class="col-md-1 col-xl-*"></div>
+			<div class="col-md-7 col-xl-*">Please fill the form to gain access to the net.</div>
+			<div class="col-md-3 col-xl-*">
+				<form role="form">
+					<div class="form-group">
+					    <label for="exampleInputEmail1">Registration no.</label>
+					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter student reg. no.">
+					</div>
+					<div class="form-group">
+					    <label for="exampleInputPassword1">Password</label>
+					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					</div>
+					<div class="checkbox">
+					    <label>
+					      <input type="checkbox" id="remember-me"> Remember me
+					    </label>
+					</div>
+					<button type="submit" class="btn btn-default">Login</button>
+					<br/><br/>
+					<div class="checkbox">
+					    <strong>
+					      You have been logged in succesfully!
+					    </strong>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-1 col-xl-*"></div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}<!--end-block:CONTENT-->

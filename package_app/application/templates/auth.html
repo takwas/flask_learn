@@ -1,0 +1,23 @@
+
+
+{%extends "base.html"%}
+{%import "bootstrap/wtf.html" as wtf%}
+
+{%block content%}
+
+
+<h1>Hey, you're about to sign in</h1>
+<h3>Think about ...it</h3>
+
+<form name="login" method="POST">
+	{{form.hidden_tag()}}
+	<p>Please enter your email/username</p>
+	{{wtf.quick_form(form)}}
+	{#<!--{{form.openid(size = 50, placeholder="Email/username...")}}<br/>
+	
+	<p>{{form.remember_me()}}</p>
+	<p><input type="submit" value="Sign in!"></p>-->#}
+</form>
+
+
+{%endblock content%}

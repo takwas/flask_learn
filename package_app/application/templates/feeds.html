@@ -1,0 +1,54 @@
+<!--A Jinja2 HTML document for FEEDS DISPLAY PAGE; extends base document-->
+
+
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Home{% endblock %}
+
+{% block navbar %}
+{{ super() }}
+{% endblock %}<!--end-block:NAV-->
+
+{% block content %}
+{{ super()}}
+
+<div class="container">
+	<h2>All Feeds...</h2>
+	<br/>
+	
+	<div class="row" id="main-content">
+			<div class="col-md-1 col-xl-*"></div>
+			<div class="col-md-7 col-xl-*">
+				<ul>
+					{%for feed_id, feed_cnt in feeds_dict.iteritems()%}
+						<li>
+							<h3>{{feed_cnt[0]}}</h3>
+							<p>{{feed_cnt[1]}}</p>
+						</li>
+						<br/>
+
+					{%endfor%}
+				</ul>
+			</div>
+			<div class="col-md-3 col-xl-*">
+				
+				{#
+				<div class="">
+				    {%if username%}
+				    	
+				    {%else%}
+				 
+				    {%endif%}
+				</div>
+				#}
+				<div>
+					<br/>
+					<h2>New Post</h2>
+					{{wtf.quick_form(post_form)}}
+				</div>
+				
+			</div>
+			<div class="col-md-1 col-xl-*"></div>
+		</div>
+</div>
+{% endblock %}<!--end-block:CONTENT-->

@@ -1,0 +1,29 @@
+<!--A Jinja2 HTML document for a sample form page; extends base document-->
+
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Sample Form Page!{% endblock %}
+
+{% block navbar %}
+{{ super() }}
+{% endblock %}<!--end-block:NAV-->
+
+{% block content %}
+{{ super()}}
+<div class="container">
+	<h1 align="center">Form Display Page</h1>
+	<br />
+	{{form.hidden_tag()}}
+	{{ wtf.quick_form(form) }}
+	<!--<form method='POST'>
+		{{form.username.label}}{{form.username(placeholder="Enter your username...")}}
+		<br />
+		{{form.password.label}}{{form.password(placeholder="Password...")}}
+		<br />
+		{{form.login()}}
+
+	</form>
+	-->
+	
+</div>
+{% endblock %}<!--end-block:CONTENT-->
